@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Lightning Web Component" icon-name="custom:custom14">
+        <div class="slds-var-around_medium"> 
+            <h2>Hello {greeting}</h2>
+        </div>
+        
+        <lightning-input label="Name" value={greeting} onchange={changeHandler}>
+
+        <lightning-input type="number" label="Number of employee" value={numberOfEmployee} onchange={changenoe}></lightning-input>
+
+        <lightning-button label="Reset" onclick={reset}></lightning-button>
+
+        <template if:true={accounts.data}>
+            <template for:each={accounts.data} for:item="account">
+                <p key={account.id}>{account.name}</p>
+            </template>
+        </template>
+        </lightning-input>
+    </lightning-card>
+</template>

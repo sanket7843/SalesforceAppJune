@@ -1,0 +1,39 @@
+<apex:page controller="SOQLController">
+    <apex:form >
+        <apex:pageBlock >
+    	<apex:inputText value="{!strSearch}"/>
+            <apex:commandButton value="Search Tex In Account, Opportunity, Contact"
+            action="{!soslDemo}" reRender="acc,err,con,opp"/>
+        <apex:actionStatus id="accStatusId">
+        	<apex:facet name="Start">
+                <img src="/img/loading.gif"/>	
+            </apex:facet>
+        </apex:actionStatus>
+            </apex:pageBlock>
+    </apex:form>
+    
+    <apex:outputPanel title="" id="err">
+    	<apex:pageMessages ></apex:pageMessages>
+    </apex:outputPanel>
+    
+    <apex:pageBlock title="Contacts" id="con">
+        <apex:pageBlockTable value="{!conList}" var="con">
+        	<apex:column value="{!con.name}"/>
+            <apex:column value="{!con.email}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+    <apex:pageBlock title="Account" id="acc">
+        <apex:pageBlockTable value="{!accList}" var="acc">
+        	<apex:column value="{!acc.name}"/>
+                        <apex:column value="{!acc.id}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+    <apex:pageBlock title="Opportunity" id="opp">
+        <apex:pageBlockTable value="{!oppList}" var="opp">
+            <apex:column value="{!opp.name}"/>
+            <apex:column value="{!opp.stagename}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

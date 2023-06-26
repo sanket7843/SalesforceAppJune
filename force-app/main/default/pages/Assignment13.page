@@ -1,0 +1,5 @@
+<apex:page standardController="Account">
+    <h1>
+        Hello this is {!account.name}'s page
+    </h1>
+</apex:page>

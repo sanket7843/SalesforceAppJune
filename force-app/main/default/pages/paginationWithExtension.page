@@ -1,0 +1,17 @@
+<apex:page standardController="account" extensions="accountPagination" recordSetVar="accounts">
+    
+    <apex:pageBlock title="account data">
+    	<apex:form >
+        	<apex:pageBlockSection >
+                <apex:dataList value="{!accountPagination}" var="acc" type="1">
+                {!acc.name}</apex:dataList>
+            </apex:pageBlockSection>
+            
+            <apex:panelGrid columns="2">
+            	<apex:commandLink value="next" action="{!next}"/>
+                <apex:commandLink action="{!previous}">previous</apex:commandLink>
+            </apex:panelGrid>
+        </apex:form>
+    </apex:pageBlock>
+    
+</apex:page>

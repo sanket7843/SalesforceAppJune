@@ -1,0 +1,6 @@
+<apex:page controller="viewStateController">
+    <apex:form >
+    a= {!a}<br/>
+        <apex:commandButton value="change data" action="{!changedata}"/>
+    </apex:form>
+</apex:page>

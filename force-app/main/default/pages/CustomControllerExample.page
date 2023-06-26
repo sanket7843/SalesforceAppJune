@@ -1,0 +1,18 @@
+<apex:page controller="customControllerLogic">
+    <apex:form >
+    	<apex:pageBlock id="details">
+
+            <apex:pageBlockTable value="{!acc}" var="a">
+            <apex:column value="{!a.Name}"/>
+                <apex:column value="{!a.website}"/>
+            </apex:pageBlockTable>
+            
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Next" action="{!next}" rerender="details" rendered="{hasNext}" />
+                <apex:commandLink value="Previous" action="{!previous}" rerender="details" rendered="{hasPrevious}"/>                
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

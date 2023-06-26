@@ -1,0 +1,5 @@
+<apex:page controller="standardController">
+    
+        Congratulations <h1> {!name} </h1> This is your first page
+    
+</apex:page>

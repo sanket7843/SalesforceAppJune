@@ -1,0 +1,18 @@
+<apex:page standardController="Account">
+    <h1>
+        hello
+    </h1>
+    <br/>
+    This is your new page.
+    <br/>
+    <h2> 
+        Hello {!$user.FirstName}
+        Bye {!$user.LastName}
+        
+    </h2>
+    
+    <!--output not showing account name 2/6 assignment 1 page-->
+    <p>
+        Hello this is {!account.name}'s page
+    </p>
+</apex:page>

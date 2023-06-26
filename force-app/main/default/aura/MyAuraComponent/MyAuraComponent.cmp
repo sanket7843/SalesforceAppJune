@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    	<h1>Hello Component</h1>
+    
+    //call javacode directly
+    <aura:handler name = "init" action="{!c.myAction}" value="{!this}"/>
+    <aura:attribute type="string" name="name" />
+    	<h1>Hello {!v.name}</h1>
+    
+</aura:component>

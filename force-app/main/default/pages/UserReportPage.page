@@ -1,0 +1,199 @@
+<apex:page controller="UserReportPageController">
+       <apex:form >
+   <head>
+        <apex:stylesheet value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+        <style>
+            .pricol {
+            background-color: #f2f2f2;
+            }
+            .imgsize{
+            width: 30%;
+            max-width: 30%;
+            height: 20%;
+            max-height: 20%;
+            }
+            
+            .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Added */
+            padding: 10px;
+            background-color: #f2f2f2;
+        }
+
+            .headerimg {
+            height: 20%;
+            max-height: 20%;
+        }
+
+            .buttons {
+                display: flex;
+        }
+   .dotted-line p::after {
+            content: "";
+            display: block;
+            border-bottom: 1px dotted black;
+            margin: 10px;
+    }
+            
+            .borderbottom{
+            	content: "";
+            display: block;
+            border-bottom: 1px dotted black;
+            margin: 10px;
+            }
+            
+            
+            .button {
+                margin - left: 10px;
+                padding: 5px 10px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                cursor: pointer;
+    	    }
+
+            .footer {
+                padding: 10px;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+            .body {
+                display: flex;
+            margin-top: 20px;
+        }
+            .register-btn{
+                background - color: #ADD8E6;
+            color: #ADD8E6;
+
+     	}
+            .column {
+                display: inline-block;
+            width: 30%;
+            max-width: 30%;
+            height: 30%;
+            max-height: 30%;
+            padding: 10px;
+            border: 1px solid red;
+            margin: 10px;
+     
+        }
+            
+            column-width{
+            width: 25%;
+            max-width: 25%;
+            
+            }
+
+            .column h2 {
+                margin: 10px;
+     		
+        }
+            .padding {
+                padding:15px;
+     }
+
+            .padding {
+                padding:15px;
+     }
+
+            .center {
+                text-align: center; 
+     } 
+
+            .right{
+           		 align-items: right;
+            }
+            
+            .square{
+            	border: 1px;
+            	border-color: blue;
+            }
+            
+        </style>
+    </head>
+
+    <header>
+       <div style="text-align: right; margin: 20px; ">
+        <div class="pricol ">
+            <div style="margin-right: 20px;">
+                <span>Hello {!username}  </span>
+            <apex:commandButton value="Logout" action="{!logoutbtn}" style="color: red"/></div>
+            </div>
+        </div>
+        <div  xmlns:xlink="http://www.w3.org/1999/xlink">
+            <img src="https://images.squarespace-cdn.com/content/v1/50afefd0e4b01c11f0ec0c82/1492450149375-0GSTQNYNJQRGRMXATMUP/DenverPublicSchools-DesignConcepts-LearningLandscapes-3.jpg" alt="homepageImage" style="width: 100%; height: 200px; object-fit: cover;" />
+        </div>
+
+
+	<div style="text-align: right; margin: 20px; ">
+        <div class="row pricol ">
+            <apex:commandLink value="Ads" action="{!goToAddsBtn}" style="display: inline-block; margin-right: 20px;"/>
+            <apex:commandLink value="My Account" action="{!goToAccountPage}" style="display: inline-block; margin-right: 20px;" />
+            <apex:commandLink value="My Report" action="{!goToReportPage}" style="display: inline-block; margin-right: 20px; color: red;"/>
+        </div>
+	</div>
+    </header>
+  
+    <div style="margin: 20px; display: flex;">
+    
+    <div>
+        <div style="border: 1px solid blue; padding: 10px; width: 120px; margin: 15px; height: 120px;">
+            <img src="https://www.salesforce.com/blog/wp-content/uploads/sites/2/2020/12/what-does-salesforce-do-header-v2.jpg?w=889" alt="Image" style="width: 100%; height: 100%;"/>
+        </div>
+        
+        <div class="dotted-line" style="border: 1px solid blue; padding: 2px; width: 120px; margin: 15px; text-align: center; ">
+            <p>
+                Demonstration 
+            </p>
+            <p>
+                Next Artical
+            </p>
+            <p>
+                Artical History 
+            </p>
+            <p>
+                Pameny Structure
+            </p>
+            <p>
+                Receiving More Artical
+            </p>
+        </div>
+        
+        <div class="dotted-line" style="border: 1px solid blue; padding: 2px; width: 120px; margin: 15px; text-align: center; ">
+            <div style= "color: blue; font-style: bold;">
+               <p>
+                Account Details 
+            </p>
+                </div>
+                Check the details when you registered your account and keep your details upto date. 
+            <div style= "color: blue; font-style: bold;">       
+            <p>
+                Balance
+            </p>
+               </div>
+                Check your current balance and view the list of all the paid transactions since joining.
+        </div>
+        </div>
+           <div class="column " style="text-align: center; ">
+               <div style='margin:10px '>
+                   My Report
+               </div>
+               <div style='margin:10px '>
+                   Balance Points: {!points}
+               </div>
+               <div style="border: 1px solid black; margin:10px">
+                Points Earned Today <br/>   
+				Nothing found to display.
+               </div>
+               <div style="border: 1px solid black; margin:10px">
+                   Add table if the data is present
+               </div>
+               
+        </div>
+           
+           </div>
+        </apex:form>
+</apex:page>

@@ -1,0 +1,265 @@
+<apex:page controller="RegistrationController" docType="html-5.0">
+    
+    <head>
+        <apex:stylesheet value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        
+        <style>
+            .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Added */
+            padding: 10px;
+            background-color: #f2f2f2;
+            }
+            
+            .header img {
+            height: 50px;
+            margin-right: 10px;
+            }
+            
+            .buttons {
+            display: flex;
+            }
+            
+            .button {
+            margin - left: 10px;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            }
+            
+            .footer {
+            padding: 10px;
+            background-color: #f2f2f2;
+            text-align: center;
+            }
+            
+            .body {
+            display: flex;
+            margin-top: 20px;
+            }
+            .register-btn{
+            background - color: #ADD8E6;
+            color: #ADD8E6;
+            
+            }
+            .column {
+            display: inline-block;
+            width: 30%;
+            max-width: 30%;
+            padding: 10px;
+            border: 1px solid red;
+            margin: 10px;
+            
+            }
+            
+            column-width{
+            width: 25%;
+            max-width: 25%;
+            
+            }
+            
+            .column h2 {
+            margin: 10px;
+            
+            }
+            .padding {
+            padding:15px;
+            }
+            
+            .padding {
+            padding:15px;
+            }
+            
+            .center {
+            text-align: center; 
+            } 
+            
+            .dotted-line p::after {
+            content: "";
+            display: block;
+            border-bottom: 1px dotted black;
+            margin-top: 5px;
+            margin: 20px;
+            }
+            
+            
+            .dotted-line p::before {
+            content: "";
+            display: block;
+            margin-top: 25px;
+            
+            }
+        </style>
+        
+    </head>
+    
+    <header>
+        <div class="header row">
+            <apex:form >
+                <h1>
+                    Login
+                </h1>
+                <div>
+                    Username: 
+                </div>
+                <apex:inputText value="{!username}" styleClass="form-input" />
+                ::
+                <div>
+                    password: 
+                </div>
+                <apex:inputText value="{!password}" styleClass="form-input" />
+                <apex:commandButton value="Login" action="{!loginUser}" styleClass="register-btn" />
+            </apex:form>
+        </div>
+        
+        <div class="header" xmlns:xlink="http://www.w3.org/1999/xlink">
+            
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/1200px-Salesforce.com_logo.svg.png" alt="Logo" />
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <i class="glyphicon glyphicon-home"></i>
+                            <p>Home</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <i class="glyphicon glyphicon-earphone"></i>
+                            <p>Contact</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <i class="glyphicon glyphicon-info-sign"></i>
+                            <p>About</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <i class="glyphicon glyphicon-file"></i>
+                            <p>Terms and Conditions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="body center">
+        <div class="column dotted-line">
+            <h2>User Details</h2>
+            <p >
+                {!ll}</p>
+            
+            <p >
+                {!ll}</p>
+            <p >
+                {!ll}</p>
+        </div>        
+        
+        <div class="column dotted-line">
+            <h2>Client Details</h2>
+            <p >
+                {!ll}</p>
+            
+            <p >
+                {!ll}</p>
+            <p >
+                {!ll}</p>
+        </div>        
+        
+        <div class="column">
+            <!-- Register user functionality goes here -->
+            
+            <h2>Registration Form</h2>
+            <div class="padding center">
+                
+                <apex:form >
+                    <div class="form-group">
+                        <span class="form-label">First Name</span> <br />
+                        <apex:inputText value="{!username}" styleClass="form-input" required="true" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <span class="form-label">Last Name</span> <br />
+                        <apex:inputText value="{!lastname}" styleClass="form-input" required="true" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <span class="form-label">Email:</span><br />
+                        <apex:inputText value="{!email}" styleClass="form-input"  />
+                    </div>
+                    
+                    <div class="form-group">
+                        <span class="form-label">Password:</span><br />
+                        <apex:inputText value="{!password}" styleClass="form-input"  />
+                    </div>
+                    
+                    <div class="form-group">
+                        <span class="form-label">Confirm Password:</span><br />
+                        <apex:inputText value="{!confirmPassword}" styleClass="form-input"  />
+                    </div>
+                    
+                    <div class="form-group">
+                        <span class="form-label">DOB: </span><br />
+                        <div class="form-input">
+                            <apex:input type="date" value="{!dob}" />
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <span class="form-label">Address: </span><br />
+                        <apex:inputText value="{!address}" styleClass="form-input"  />
+                    </div>
+                    
+                    <div class="form-group">
+                        <span class="form-label">Country </span><br />
+                        <apex:selectList value="{!country}" size="1">
+                            <apex:selectOptions value="{!countryOptions}" />
+                        </apex:selectList>
+                    </div>
+                    
+                    <div class="form-group">
+                        <span class="form-label">Secret Question </span><br />
+                        <apex:selectList value="{!secretQuestion}" size="1">
+                            <apex:selectOptions value="{!securityOptions}" />
+                        </apex:selectList>
+                    </div>
+                    
+                    <div class="form-group">
+                        <span class="form-label">Phone No: </span><br />
+                        <apex:inputText value="{!phone}" styleClass="form-input"  />
+                    </div>
+                    
+                    <div class="form-group">
+                        <span class="form-label">Secret Answer: </span><br />
+                        <apex:inputText value="{!secretAnswer}" styleClass="form-input"  />
+                    </div> 
+                    
+                    <div class="form-group"><apex:inputCheckbox title="Is Refered By Friend?" />
+                        <span class="form-label">Is Refered By Friend? </span>
+                    </div>
+                    <div class="form-group"><apex:inputCheckbox />
+                        <span class="form-label">I Agree with terms and conditions </span>
+                    </div>
+                    
+                    <div class="form-group" >
+                        <apex:commandButton value="Join Now >>>" action="{!registerUser}" styleClass="register-btn" />
+                    </div>
+                    
+                    
+                </apex:form>
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        Basic Information
+    </div>
+    
+</apex:page>

@@ -1,0 +1,5 @@
+<apex:component controller="UserHomepageController" >
+    https://apsmicrotechpvtltd-dev-ed--c.vf.force.com/apex/UserHomepage?accountId=a0R5j000007ZJW6EAO
+	<apex:outputText value="Account ID: {!accountId}" />
+  
+</apex:component>

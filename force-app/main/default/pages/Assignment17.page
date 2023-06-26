@@ -1,0 +1,19 @@
+<apex:page standardController="Account" renderAs="pdf" applyBodyTag="true">
+    <head>
+        <style>
+        	body {font-family: 'Arial Unicode MS'; }
+            .customClass{font: 30px; color: red; }
+        </style>
+    </head>
+    
+    <body>
+        <center>
+            <h1>New account name</h1>
+            <apex:panelGrid columns="1" width="100%">
+            	<apex:outputField value="{!account.name}" styleClass="customClass"/>
+            	<apex:outputText value="{!account.name}" styleClass="customClass"/>
+                <apex:outputText value="{!NOW()}"/>
+            </apex:panelGrid>
+        </center>
+    </body>
+</apex:page>

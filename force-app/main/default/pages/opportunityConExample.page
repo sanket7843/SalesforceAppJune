@@ -1,0 +1,8 @@
+<apex:page controller="opportunityCon">
+    <apex:form >
+        <apex:pageBlock >
+    <apex:pageBlockTable value="{!opp}" var="op">  
+        	<apex:column value="{!op.name}"/>
+        </apex:pageBlockTable></apex:pageBlock>
+    </apex:form>
+</apex:page>

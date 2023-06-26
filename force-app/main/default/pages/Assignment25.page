@@ -1,0 +1,5 @@
+<apex:page >
+    <apex:image url="{!URLFOR($Resource.DemoZip, 'owk8QH.jpg')}" width="200" height="200"/> 
+    &nbsp;
+    <apex:image url="{!($Resource.DemoImage)}" width="200" height="200"/>
+</apex:page>

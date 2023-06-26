@@ -1,0 +1,10 @@
+<apex:page controller="studentController">
+    <apex:form >
+    	<apex:outputPanel >
+            {!student} <br/>
+        </apex:outputPanel>
+        
+        	<apex:commandButton value="Change Value" action="{!changeValue}"/>
+       
+    </apex:form>
+</apex:page>

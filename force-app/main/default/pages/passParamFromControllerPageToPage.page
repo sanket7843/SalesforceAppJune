@@ -1,0 +1,8 @@
+<apex:page controller="controllerWithParamPass">
+    <apex:form >
+        you are viewing {!account.name}'s page<br/>
+        <apex:inputField value="{!account.name}"/><br/>
+        <apex:commandButton value="save" action="{!save}"/>
+        <apex:commandButton value="Proceed with saving" action="{!gotoSecondPage}"/>
+    </apex:form>
+</apex:page>

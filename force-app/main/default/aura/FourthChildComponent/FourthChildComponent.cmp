@@ -1,0 +1,8 @@
+<aura:component >
+    <aura:attribute type="string" name ="passingParam"/>
+    <aura:method name = "sampleMethod" action ="{!c.doAction}">
+        <aura:attribute type="string" name="param1" default="parameter 1"/>
+        <aura:attribute type="string" name="param2" default="parameter 2"/>
+        <aura:attribute type="string" name="param3" />
+    </aura:method>
+</aura:component>

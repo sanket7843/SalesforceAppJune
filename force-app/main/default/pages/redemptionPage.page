@@ -1,0 +1,223 @@
+<apex:page controller="redemptionPageController" docType="html-5.0">
+      <apex:form >
+        
+        <head>
+            <apex:stylesheet value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+            <style>
+                 #myDiv {
+            display: none;
+            padding: 20px;
+        }
+                .blue-button {
+                background-color: blue;
+                color: white;
+                padding: 10px 20px;
+                display: inline-block;
+                }
+                .pricol {
+                background-color: #f2f2f2;
+                }
+                .imgsize{
+                width: 30%;
+                max-width: 30%;
+                height: 20%;
+                max-height: 20%;
+                }
+                
+                .header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between; /* Added */
+                padding: 10px;
+                background-color: #f2f2f2;
+                }
+                
+                .headerimg {
+                height: 20%;
+                max-height: 20%;
+                }
+                
+                .buttons {
+                display: flex;
+                }
+                .dotted-line p::after {
+                content: "";
+                display: block;
+                border-bottom: 1px dotted black;
+                margin: 10px;
+                }
+                
+                .borderbottom{
+                content: "";
+                display: block;
+                border-bottom: 1px dotted black;
+                margin: 10px;
+                }
+                
+                
+                .button {
+                margin - left: 10px;
+                padding: 5px 10px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                cursor: pointer;
+                }
+                .button-container {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+                }
+                
+                .send-button {
+                padding: 10px 20px;
+                background-color: blue;
+                color: white;
+                border: none;
+                cursor: pointer;
+                }
+                .footer {
+                padding: 10px;
+                background-color: #f2f2f2;
+                text-align: center;
+                }
+                
+                .body {
+                display: flex;
+                margin-top: 20px;
+                }
+                .register-btn{
+                background - color: #ADD8E6;
+                color: #ADD8E6;
+                
+                }
+                .column {
+                display: inline-block;
+                width: 30%;
+                max-width: 30%;
+                height: 30%;
+                max-height: 30%;
+                padding: 10px;
+                border: 1px solid red;
+                margin: 10px;
+                
+                }
+                
+                column-width{
+                width: 25%;
+                max-width: 25%;
+                
+                }
+                
+                .column h2 {
+                margin: 10px;
+                
+                }
+                .padding {
+                padding:15px;
+                }
+                
+                .padding {
+                padding:15px;
+                }
+                
+                .center {
+                text-align: center; 
+                } 
+                
+                .right{
+                align-items: right;
+                }
+                
+                .square{
+                border: 1px;
+                border-color: blue;
+                }
+                
+            </style>
+        </head>
+        
+        <header>
+            <div style="text-align: right; margin: 20px; ">
+                <div class="pricol ">
+                    <div style="margin-right: 20px;">
+                        <span>Hello {!username}</span>
+                        <apex:commandButton value="Logout" style="color: red"/></div>
+                </div>
+            </div>
+            <div  xmlns:xlink="http://www.w3.org/1999/xlink">
+                <img src="https://images.squarespace-cdn.com/content/v1/50afefd0e4b01c11f0ec0c82/1492450149375-0GSTQNYNJQRGRMXATMUP/DenverPublicSchools-DesignConcepts-LearningLandscapes-3.jpg" alt="homepageImage" style="width: 100%; height: 200px; object-fit: cover;" />
+            </div>
+            
+            <div style="text-align: right; margin: 20px; ">
+                <div class="row pricol ">
+                    <apex:commandLink value="Show User" action="{!showUser}" style="display: inline-block; margin-right: 20px;"/>
+                    <apex:commandLink value="Show Client" action="{!showClient}" style="display: inline-block; margin-right: 20px;"/>
+                    <apex:commandLink value="Insert Ad" action="{!insertAd}" style="display: inline-block; margin-right: 20px;"/>
+                    <apex:commandLink value="Send Advertise" action="{!sendAdvertise}" style="display: inline-block; margin-right: 20px;"/>
+                    <apex:commandLink value="Redemption" action="{!redemption}" style="display: inline-block; margin-right: 20px; color: red;"/>
+                    <apex:commandLink value="Redemption Request" action="{!redemptionRequest}" style="display: inline-block; margin-right: 20px;"/>
+                </div>
+            </div>
+        </header>
+          
+           <div class="body center">
+
+        <div class="column">
+            
+            <h4>Acount</h4>
+            <div class="padding center">
+                
+                    <div class="form-group">
+                        <span class="form-label">User Name</span> <br />
+                        <apex:inputText value="{!username}" styleClass="form-input" required="true" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <span class="form-label">DOB: </span><br />
+                        <div class="form-input">
+                            <apex:input type="date" value="{!dob}" />
+                        </div>
+                </div>
+                
+                <div class="form-group" >
+                    <apex:commandButton value="Submit" styleClass="register-btn" onclick="{!UserData}" />
+                    <button onclick="showDiv(); return false;">Show Data</button>
+                    <button onclick="hideDiv(); return false;">Hide Data</button>
+                </div>                    
+                <div id="myDiv" style="display:block;" rendered="{!showData}">
+                    <div class="padding center">
+                        <p>User Name: {!name}</p><br/>
+                        <span class="form-label">Registration Date: </span><br />
+                        <div class="form-input">
+                            <apex:outputText value="{!registration}" />
+                        </div>
+                        <p>Total Points: {!points }</p>
+                        <p>Last Redemption Date: {!redemptionDate}</p>
+                        <span class="form-label">Redemption Points: </span><br />
+                        <div class="form-input">
+                            <apex:input type="text" value="{!redemptionPoints}" />
+                        </div>
+                        <apex:commandButton value="Redeem" styleClass="register-btn" action="{!redeemPoints}" />
+                    </div>
+                </div>
+            </div>	
+        </div>
+    </div>
+ 
+	        <div class="button-container">
+            <apex:commandButton value="Send" styleClass="send-button" />
+        </div>   
+    </apex:form>
+   <script>
+        function showDiv() {
+            var div = document.getElementById("myDiv");
+            div.style.display = "block";
+        }
+        
+        function hideDiv() {
+            var div = document.getElementById("myDiv");
+            div.style.display = "none";
+        }
+    </script>
+</apex:page>

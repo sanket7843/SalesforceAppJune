@@ -1,0 +1,14 @@
+<apex:page controller="listStandard">
+    <apex:form >
+        <apex:outputPanel id="studentId">
+            {!student} <br/>
+            {!studentList}<br/>
+         
+        <apex:repeat value="{!student}" var="st">
+            {!st} <br/>
+            </apex:repeat>
+        </apex:outputPanel> 
+        
+        <apex:commandButton value="Change Value" action="{!studentlists}"/>
+    </apex:form>    
+</apex:page>

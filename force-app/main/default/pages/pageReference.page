@@ -1,0 +1,7 @@
+<apex:page controller="MyPage_Controller">
+    
+    <apex:form >
+    <apex:commandButton value="Change Value" action="{!gotoLink}"/>
+    </apex:form>
+    
+</apex:page>

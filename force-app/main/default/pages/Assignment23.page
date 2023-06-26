@@ -1,0 +1,25 @@
+<apex:page standardController="Contact" recordSetVar="contacts">
+    <apex:form >
+    <apex:pageBlock >
+    	<apex:pageBlockTable value="{!contacts}" var="c">
+            <apex:column >
+                <apex:commandLink reRender="conData">
+                    {!c.firstname}
+                        <apex:param value="{!c.id}" name="cid"/>
+                </apex:commandLink>
+            </apex:column>
+            <apex:column >
+                <apex:commandLink reRender="conData">
+                {!c.lastname}
+                    <apex:param name="cid" value="{!c.id}"/>
+                </apex:commandLink>
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+        
+        <apex:pageBlock id="conData">
+        	<apex:detail subject="{!$CurrentPage.parameters.cid}" relatedList="false"/>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

@@ -1,0 +1,4 @@
+<aura:component implements="flexipage:availableForAllPageTypes" >
+    <c:FourthChildComponent aura:id="compB" passingparam="Passing Data From parent" />
+    <lightning:button label="Set Child Value" onClick="{!c.onAction}"/>
+</aura:component>

@@ -1,0 +1,16 @@
+<apex:page controller="studentListController">
+    <apex:form >
+    
+        <apex:outputPanel >
+            {!studentSingle}<br/>
+            {!studentList}<br/>
+        </apex:outputPanel>
+        
+        <apex:repeat value="{!studentList}" var="stu">
+            {!stu}<br/>
+        </apex:repeat>
+        
+        <apex:commandButton value="Change Data" action="{!changeData}"/>
+    
+    </apex:form>
+</apex:page>

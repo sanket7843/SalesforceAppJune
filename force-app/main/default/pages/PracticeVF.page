@@ -1,0 +1,14 @@
+<apex:page standardController="contact" recordSetVar="contact">
+    
+    <style>
+    	.body{ font-family: 'Arial Unicode MS'; }
+        .company{color: red; font: 250px;}
+    </style>
+    
+    <apex:pageBlock >
+       <apex:pageBlockTable value="{!contact}" var="c">
+        	<apex:column value="{!c.firstname}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+</apex:page>

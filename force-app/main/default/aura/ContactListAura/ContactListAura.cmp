@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+             			    controller = "AuraContactList" access="global" >
+	
+    <h1>Hello Aura!</h1>
+    <br/>
+    <aura:handler name="init" action="{!c.myAction}" value="{!this}"/>
+    <aura:attribute name = "contactList" type = "list"/>
+    
+    <aura:iteration items="{!v.contactList}" var="con">
+    
+        <lightning:formattedText value="{!con.FirstName}"/>        
+        <lightning:formattedText value=" "/>        
+
+        <lightning:formattedText value="{!con.LastName}"/>
+        <br/>
+    </aura:iteration>
+	
+</aura:component>

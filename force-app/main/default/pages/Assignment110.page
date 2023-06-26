@@ -1,0 +1,9 @@
+<apex:page standardController="Visit_Of_Patient_To_Doctor__c" >
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!Visit_Of_Patient_To_Doctor__c.Patient__r}" var="pa">
+            <apex:column value="{!pa.Name}"/>
+            <apex:column value="{!pa.Email__c}"/>
+            <apex:column value="{!pa.Mobile_No__c}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>
