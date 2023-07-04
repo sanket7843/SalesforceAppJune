@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+        <lightning-input type="number" value={noOfEmp} onchange={numberChange} label="Number Of Employee">
+        </lightning-input>
+
+        <lightning-button label="reset" onclick={reset}>
+        </lightning-button>
+
+        <template if:true={accounts.data}>
+            <template for:each={accounts.data} for:item="account">
+                <p key={account.id}>{account.Name}</p>
+            </template>
+        </template>
+    </lightning-card>
+</template>

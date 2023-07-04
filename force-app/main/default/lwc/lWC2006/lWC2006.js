@@ -1,24 +1,19 @@
 import { LightningElement, wire } from 'lwc';
-import getAccountByEmployee from '@salesforce/apex/getAccountsList.getAccountByEmployee';
+import getAccountsByEmployeeNumber from '@salesforce/apex/getAccountsList.getAccountsByEmployeeNumber';
 
 export default class LWC2006 extends LightningElement {
 
-    greeting = 'Coder';
-    numberOfEmployee = null; 
+numberOfEmployees = null;
 
-    changeHandler(event) { 
-        this.greeting = event.target.value;
+ handleChange(event) {
+    this.numberOfEmployees = event.detail.value;
+}
+
+    reset() { 
+        this.numberOfEmployees = null;
     }
 
-    changenoe(event) { 
-        this.numberOfEmployee = event.target.value;
-    }
-
-    reset(event) { 
-        this.numberOfEmployee = null;
-    }
-
-    @wire(getAccountByEmployee, { noe: '$numberOfEmployee' })
+    @wire(getAccountsByEmployeeNumber, { numberOfEmployees: '$numberOfEmployees' })
     accounts;
 
 }
